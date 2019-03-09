@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import db from './db/db';
+import userQueries from './queries.js'
 
 // Set up the express app
 const app = express();
@@ -130,3 +131,5 @@ app.post('/api/v1/todos', (req, res) => {
       updatedTodo,
     });
   });
+
+app.get('/users', userQueries.getUsers)
